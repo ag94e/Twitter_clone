@@ -1,6 +1,5 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.dispatch import receiver
 from django.core.validators import RegexValidator
 
 class Profile(models.Model):
@@ -23,6 +22,9 @@ class Profile(models.Model):
         blank=True,
         null=True
     )
+    followers = models.IntegerField(default=0)
+    following = models.IntegerField(default=0)
+    totalTweets = models.IntegerField(default=0)
     about_me = models.TextField(max_length=250, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
