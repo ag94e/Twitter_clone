@@ -11,6 +11,26 @@ class Tweet(models.Model):
     rt = models.IntegerField(null=False, default=0)
     fav = models.IntegerField(null=False, default=0)
     replies = models.IntegerField(null=True, default=0)
+    image1 = models.ImageField(
+        upload_to='users/pictures/tweets',
+        blank=True,
+        null=True
+    )
+    image2 = models.ImageField(
+        upload_to='users/pictures/tweets',
+        blank=True,
+        null=True
+    )
+    image3 = models.ImageField(
+        upload_to='users/pictures/tweets',
+        blank=True,
+        null=True
+    )
+    image4 = models.ImageField(
+        upload_to='users/pictures/tweets',
+        blank=True,
+        null=True
+    )
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
