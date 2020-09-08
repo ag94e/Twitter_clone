@@ -2,6 +2,9 @@
 # Django
 from django.shortcuts import render
 
+# Utilities
+from datetime import datetime
+import time
 tweets = [
     {
         'user':{
@@ -15,7 +18,11 @@ tweets = [
             'image2': 'null',
             'image3': 'null',
             'image4': 'null'
-        }
+        },
+        "time" : datetime.now(),
+        "fav": 12,
+        "rt": 4,
+        "replies": 2
     },
     {
         'user':{
@@ -29,7 +36,11 @@ tweets = [
             'image2': 'null',
             'image3': 'null',
             'image4': 'null'
-        }
+        },
+        "time" : datetime.now(),
+        "fav": 12,
+        "rt": 4,
+        "replies": 2
     },
     {
         'user':{
@@ -43,7 +54,11 @@ tweets = [
             'image2': 'null',
             'image3': 'null',
             'image4': 'null'
-        }
+        },
+        "time" : datetime.now(),
+        "fav": 12,
+        "rt": 4,
+        "replies": 2
     },
     {
         'user':{
@@ -57,7 +72,11 @@ tweets = [
             'image2': 'null',
             'image3': 'null',
             'image4': 'null'
-        }
+        },
+        "time" : datetime.now(),
+        "fav": 12,
+        "rt": 4,
+        "replies": 2
     },
 ]
 

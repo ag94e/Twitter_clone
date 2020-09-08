@@ -21,14 +21,10 @@
         .new_height {
             height: 8px;
         }
-        .tweets > img{
+        .tweets > div > img{
             border-radius: 50%;
             width: 40px;
             height: 40px;
-            white-space:nowrap;
-        }
-        .tweets > p {
-            white-space:nowrap;
         }
     </style>
     <title>Twitter</title>
@@ -47,10 +43,32 @@
     </div>
     <div class="col-4 offset-4 bg-secondary new_height"></div>
     {% for tweet in tweets %}
-    <div class="col-4 offset-4 tweets p-2 border">
-        <img src="{{tweet.user.picture}}" alt="{{ tweet.name.username }}">
-        <strong>{{ tweet.user.name }}</strong>  {{ tweet.user.name }}
-        <p> {{ tweet.tweet }}</p>
+    <div class="col-4 offset-4 p-2 border">
+        <div class="container-fluid">
+            <div class="row tweets">
+                <div class="col-1">
+                    <img src="{{tweet.user.picture}}" alt="{{ tweet.name.username }}">
+                </div>
+                <div class="col-11">
+                    <strong>{{ tweet.user.name }}</strong>  {{ tweet.user.username }} · {{ tweet.time }}
+                    <br>
+                    {{ tweet.tweet }}
+                </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 offset-1">
+                        <button>reply</button>  {{ tweet.replies }}
+                    </div>
+                    <div class="col-4">
+                        <button>rt</button>  {{ tweet.rt }}
+                    </div>
+                    <div class="col-3">
+                        <button>fav</button>  {{ tweet.fav }}
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
     {% endfor %} 
 </body>
